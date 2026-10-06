@@ -89,4 +89,16 @@ print("Outer:", x)
 
 ## Python lambda
 
+square = lambda x: x ** 2
+print(square(5))  # Output: 25
 
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = list(map(lambda x: x ** 2, numbers))
+print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+
+def greet(name="World", *args, **kwargs):
+    print(f"Hello, {name}!")
+    print("Additional positional arguments:", args)
+    print("Additional keyword arguments:", kwargs)
+
+greet("Alice", 1, 2, 3, key1="value1", key2="value2")

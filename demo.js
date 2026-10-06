@@ -80,3 +80,17 @@ function outerFunction() {
 }
 
 outerFunction(); // Output: local
+
+const square = (x) => x * x;
+console.log(square(5)); // Output: 25
+
+const numbers = [1, 2, 3, 4, 5];
+const squaredNumbers = numbers.map(num => num * num);
+console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25]
+
+function greet(name = "World", ...args) {
+    console.log(`Hello, ${name}!`);
+    console.log("Arguments:", args);
+}
+
+greet("Alice", 1, 2, { color: "blue", age: 30 });
