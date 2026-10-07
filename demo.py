@@ -102,3 +102,68 @@ def greet(name="World", *args, **kwargs):
     print("Additional keyword arguments:", kwargs)
 
 greet("Alice", 1, 2, 3, key1="value1", key2="value2")
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return f"{self.name} makes a sound."
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} barks."
+
+generic_animal = Animal("Generic Animal")
+dog = Dog("Buddy")
+
+print(generic_animal.speak())  # Output: Generic Animal makes a sound.
+print(dog.speak())  # Output: Buddy barks.
+
+class Person:
+    def __init__(self, name , age):
+        self.name = name
+        self.age = age
+    def greet(self):
+        return f"Hello, my name is {self.name} and I am {self.age} years old."
+
+person1 = Person("Alice", 30)
+print(person1.greet())  # Output: Hello, my name is Alice and I am 30 years old.
+
+class Bird:
+    def fly(self):
+        return "Birds can fly"
+
+class Penguin(Bird):
+    def fly(self):
+        return "Penguins cannot fly"
+
+def get_flight_ability(bird):
+    print(bird.fly())
+
+sparrow = Bird()
+penguin = Penguin()
+get_flight_ability(sparrow)    # Output: Birds can fly
+get_flight_ability(penguin)    # Output: Penguins cannot fly
+
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+    def subtract(self, a, b):
+        return a - b
+
+calc = Calculator()
+print(calc.add(5, 3))  # Output: 8
+print(calc.subtract(5, 3))  # Output: 2
+
+import asyncio
+import aiohttp
+
+async def fetch_data():
+    async with aiohttp.ClientSession() as session:
+        async with session.get('https://jsonplaceholder.typicode.com/todos/1') as response:
+            data = await response.json()
+            print(data)
+
+asyncio.run(fetch_data())

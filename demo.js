@@ -94,3 +94,114 @@ function greet(name = "World", ...args) {
 }
 
 greet("Alice", 1, 2, { color: "blue", age: 30 });
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a sound.`);
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} barks.`);
+    }
+}
+
+const genericAnimal = new Animal("Generic Animal");
+const dog = new Dog("Rex");
+
+genericAnimal.speak(); // Output: Generic Animal makes a sound.
+dog.speak();           // Output: Rex barks.
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+}
+
+const person1 = new Person("Alice", 30);
+person1.greet(); // Output: Hello, my name is Alice and I am 30 years old.
+
+class Bird {
+    fly() {
+        return "Birds can fly.";
+    }
+}
+
+class Penguin extends Bird {
+    fly() {
+        return "Penguins cannot fly.";
+    }   
+}
+
+function getFlightAbility(bird) {
+    return bird.fly();
+}
+
+const sparrow = new Bird();
+const penguin = new Penguin();
+
+console.log(getFlightAbility(sparrow)); // Output: Birds can fly.
+console.log(getFlightAbility(penguin)); // Output: Penguins cannot fly.
+
+// javascript prototype
+
+
+function Calculator() {}
+
+Calculator.prototype.add = function(a, b) {
+    return a + b;
+}
+
+Calculator.prototype.subtract = function(a, b) {
+    return a - b;
+}
+
+const calc = new Calculator();
+console.log(calc.add(5, 3)); // Output: 8
+console.log(calc.subtract(5, 3)); // Output: 2
+
+// same implementation using class
+class CalculatorClass {
+    add(a, b) {
+        return a + b;
+    }
+
+    subtract(a, b) {
+        return a - b;
+    }
+}
+
+const calcClass = new CalculatorClass();
+console.log(calcClass.add(5, 3)); // Output: 8
+console.log(calcClass.subtract(5, 3)); // Output: 2
+
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+async function fetchData() {
+    try {
+        const response = await fetch('https://api.example.com/data');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+fetchData();
