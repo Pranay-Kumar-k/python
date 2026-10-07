@@ -1,3 +1,4 @@
+# resource - https://www.freecodecamp.org/news/learn-python-for-javascript-developers-handbook/#heading-1-brief-overview-of-javascript-and-python
 print("hello world!");
 
 for i in range(5):
@@ -167,3 +168,21 @@ async def fetch_data():
             print(data)
 
 asyncio.run(fetch_data())
+
+import aiofiles
+import asyncio
+
+async def read_file():
+    async with aiofiles.open('example.txt', mode='r') as f:
+        contents = await f.read()
+        print(contents)
+asyncio.run(read_file())
+
+# Concurrency: Both languages handle concurrency well, but JavaScript’s event loop and non-blocking I/O model are better suited for high-throughput, real-time applications.
+# Threading: Python’s asyncio works best for I/O-bound tasks. For CPU-bound tasks, Python relies on multi-threading or multi-processing.
+# Ease of Use: JavaScript’s async/await is simpler to implement for beginners, while Python requires familiarity with asyncio for similar functionality.
+# JavaScript: Asynchronous programming is central to JavaScript’s design. Its event loop and Promises make it highly efficient for real-time, event-driven applications.
+# Python: Asynchronous programming is a newer addition to Python, focused on handling I/O-bound tasks efficiently with asyncio.
+# Syntax: Both languages use async/await, but Python requires explicit setup with asyncio, while JavaScript integrates it natively.
+# To install all dependencies in requirements.txt:
+# bashCopy codepip install -r requirements.txt
