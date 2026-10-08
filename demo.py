@@ -186,3 +186,13 @@ asyncio.run(read_file())
 # Syntax: Both languages use async/await, but Python requires explicit setup with asyncio, while JavaScript integrates it natively.
 # To install all dependencies in requirements.txt:
 # bashCopy codepip install -r requirements.txt
+
+#  Python Exception Handling
+try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    print("Error: Cannot divide by zero.")
+else:
+    print("Division successful:", result)
+finally:
+    print("Execution completed.")

@@ -218,3 +218,16 @@ socket.onmessage = function(event) {
 // JavaScript: Asynchronous programming is central to JavaScript’s design. Its event loop and Promises make it highly efficient for real-time, event-driven applications.
 // Python: Asynchronous programming is a newer addition to Python, focused on handling I/O-bound tasks efficiently with asyncio.
 // Syntax: Both languages use async/await, but Python requires explicit setup with asyncio, while JavaScript integrates it natively.
+
+try {
+    const result = 10 / 0;
+    if (!isFinite(result)) {
+        throw new Error("Cannot divide by zero.");
+    }
+}
+catch (error) {
+    console.error("Error:", error.message);
+}
+finally {
+    console.log("Execution completed.");
+}
