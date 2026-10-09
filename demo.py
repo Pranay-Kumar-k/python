@@ -302,3 +302,20 @@ shutil.move("source.txt", "example_dir/destination.txt")
 # List files in a directory
 for file in os.listdir("example_dir"):
     print(file)
+
+# Data Processing and Visualization
+# Python: Data Science with Pandas and Matplotlib
+# Python dominates data processing and visualization with libraries like Pandas and Matplotlib.
+
+# Example: Data Analysis in Python
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create a DataFrame
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 18]}
+df = pd.DataFrame(data)
+
+# Plot the data
+df.plot(x='Name', y='Age', kind='bar')
+plt.show()

@@ -336,3 +336,30 @@ fs.renameSync('source.txt', path.join('example_dir', 'destination.txt'));
 fs.readdirSync('example_dir').forEach(file => {
     console.log(file);
 });
+
+// JavaScript: Data Visualization with D3.js
+// JavaScript excels at interactive web-based visualizations with D3.js.
+
+// Example: Data Visualization in JavaScript
+
+const d3 = require('d3');
+const data = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+    { name: 'Charlie', age: 35 }
+];
+
+const svg = d3.create("svg")
+    .attr("width", 500)
+    .attr("height", 300);
+
+svg.selectAll("rect")
+    .data(data)
+    .enter()
+    .append("rect")
+    .attr("x", (d, i) => i * 100)
+    .attr("y", d => 300 - d.age * 5)
+    .attr("width", 50)
+    .attr("height", d => d.age * 5);
+
+console.log(svg.node().outerHTML);
