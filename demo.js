@@ -317,3 +317,22 @@ app.get('/api/data', (req, res) => {
 app.listen(3000, () => {
     console.log('Server running on port 3000');
 });
+
+// JavaScript: File System Module (fs)
+// JavaScript’s fs module allows file handling, but it requires more boilerplate.
+
+// Example: File Automation in JavaScript
+
+const fs = require('fs');
+const path = require('path');
+
+// Create a directory
+fs.mkdirSync('example_dir', { recursive: true });
+
+// Move a file
+fs.renameSync('source.txt', path.join('example_dir', 'destination.txt'));
+
+// List files in a directory
+fs.readdirSync('example_dir').forEach(file => {
+    console.log(file);
+});

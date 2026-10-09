@@ -283,3 +283,22 @@ def get_data():
     return jsonify({"message": "hello world"})
 if __name__ == '__main__':
     app.run(debug=True)
+
+# Automation Scripts: File Handling, Network Requests, and Scripting
+# Python: Automation with os and shutil
+# Python excels at automation tasks, making file and system operations straightforward.
+
+# Example: File Automation in Python
+
+import os
+import shutil
+
+# Create a directory
+os.makedirs("example_dir", exist_ok=True)
+
+# Move a file
+shutil.move("source.txt", "example_dir/destination.txt")
+
+# List files in a directory
+for file in os.listdir("example_dir"):
+    print(file)
