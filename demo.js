@@ -363,3 +363,35 @@ svg.selectAll("rect")
     .attr("height", d => d.age * 5);
 
 console.log(svg.node().outerHTML);
+
+// JavaScript: TensorFlow.js
+// TensorFlow.js brings machine learning capabilities to JavaScript.
+
+// Example: Machine Learning in JavaScript
+
+const tf = require('@tensorflow/tfjs-node');
+
+// Define a simple model
+const model = tf.sequential();
+model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
+model.compile({ optimizer: 'sgd', loss: 'meanSquaredError' });
+
+// Train the model
+const xs = tf.tensor([1, 2, 3, 4]);
+const ys = tf.tensor([2, 4, 6, 8]);
+model.fit(xs, ys, { epochs: 500 }).then(() => {
+    // Predict
+    model.predict(tf.tensor([5])).print();  // Output: [[10]]
+});
+
+// Popular JavaScript Libraries for Web Development:
+
+// React: Component-based UI development.
+
+// Vue: Simple and progressive framework for building UIs.
+
+// Angular: Comprehensive framework for large-scale applications.
+
+// Express: Lightweight framework for creating REST APIs.
+
+// Next.js: Full-stack framework for React applications with server-side rendering.

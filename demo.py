@@ -319,3 +319,61 @@ df = pd.DataFrame(data)
 # Plot the data
 df.plot(x='Name', y='Age', kind='bar')
 plt.show()
+
+# Machine Learning and AI
+# Python: TensorFlow
+# Python’s TensorFlow library simplifies building machine learning models.
+
+# Example: Machine Learning in Python
+
+import tensorflow as tf
+
+# Define a simple model
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(units=1, input_shape=[1])
+])
+model.compile(optimizer='sgd', loss='mean_squared_error')
+# Train the model
+xs = [1, 2, 3, 4]
+ys = [2, 4, 6, 8]
+model.fit(xs, ys, epochs=500, verbose=0)
+
+# Predict
+print(model.predict([5]))  # Output: [[10]]
+
+# Open Source Libraries: NPM vs. PyPI
+# Both Python and JavaScript have centralized repositories for distributing and installing open-source libraries: PyPI (Python Package Index) for Python and NPM (Node Package Manager) for JavaScript.
+
+# Python: PyPI
+
+# PyPI hosts over 400,000 packages, supporting fields like data science, web development, machine learning, and automation.
+
+# Popular libraries include:
+
+# Pandas for data manipulation.
+
+# NumPy for numerical computing.
+
+# Django and Flask for web development.
+
+# BeautifulSoup and Scrapy for web scraping.
+
+# Example: Installing and Using a PyPI Library
+
+# pip install requests
+import requests
+
+response = requests.get("https://api.example.com/data")
+print(response.json())
+
+# Popular Python Libraries for Data Science:
+
+# Pandas: Data manipulation and analysis.
+
+# NumPy: Numerical computing and arrays.
+
+# Matplotlib/Seaborn: Data visualization.
+
+# Scikit-learn: Machine learning algorithms.
+
+# TensorFlow/Keras: Deep learning frameworks.
