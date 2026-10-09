@@ -231,3 +231,52 @@ catch (error) {
 finally {
     console.log("Execution completed.");
 }
+
+// node --inspect app.js
+
+// Testing (Mocha & Chai)
+
+const {expect} = require("chai");
+
+function add(a, b) {
+    return a+b;
+}
+describe("Addition function", function() {
+    it("should return the sum of two numbers", function() {
+        expect(add(2, 3)).to.equal(5);
+    });
+});
+
+// Automation and CI/CD Compatibility
+// JavaScript (GitHub Actions):
+
+```name: Node.js CI
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - run: npm install
+    - run: npm test
+    - run: npm run coverage 
+    ```
+
+    // JavaScript: Cypress for E2E Testing
+
+    // Example: Cypress Test
+
+describe('Login Page', () => {
+    it('should log in with valid credentials', () => {
+        cy.visit('/login');
+        cy.get('#username').type('user');
+        cy.get('#password').type('password');
+        cy.get('button[type="submit"]').click();
+        cy.url().should('include', '/dashboard');
+    });
+});

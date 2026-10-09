@@ -196,3 +196,58 @@ else:
     print("Division successful:", result)
 finally:
     print("Execution completed.")
+
+# Debugging in Python:
+import logging
+
+logging.basicConfig(level=logging.ERROR)
+logging.error("An error occurred.")
+
+import pdb; pdb.set_trace()
+
+import pytest
+
+def add(a,b):
+    return a+b
+
+def test_add_positive_numbers():
+    assert add(2,3) == 5
+
+def test_add_negative_numbers():
+    assert(-2,-3) == -5
+
+# In Python, coverage.py is the standard tool for measuring test coverage.
+
+# Example: Generating Coverage Reports with Pytest and Coverage.py
+
+# pip install pytest coverage
+# coverage run -m pytest
+# coverage report
+
+# name: Python CI
+
+# on: [push]
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - uses: actions/setup-python@v2
+#       with:
+#         python-version: '3.9'
+#     - run: pip install -r requirements.txt
+#     - run: pytest --cov=.
+
+# Example: Selenium Test
+
+from selenium import webdriver
+
+def test_login():
+    driver = webdriver.Chrome()
+    driver.get("http://example.com/login")
+    driver.find_element_by_id("username").send_keys("user")
+    driver.find_element_by_id("password").send_keys("password")
+    driver.find_element_by_css_selector("button[type='submit']").click()
+    assert "dashboard" in driver.current_url
+    driver.quit()
