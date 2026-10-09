@@ -301,3 +301,19 @@ const puppeteer = require('puppeteer');
 
     await browser.close();
 })();
+
+// JavaScript: Express
+// Express is a popular framework for creating REST APIs in JavaScript.
+
+// Example: REST API in JavaScript
+
+const express = require('express');
+const app = express();
+
+app.get('/api/data', (req, res) => {
+    res.json({ message: 'Hello, World!' });
+});
+
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
+});

@@ -268,3 +268,18 @@ soup = BeautifulSoup(response.content, "html.parser")
 titles = soup.find_all("h2")
 for title in titles:
     print(title.text)
+
+# Creating a REST API
+# Python: Flask
+# Python’s Flask framework is lightweight and ideal for quickly building APIs.
+
+# Example: REST API in Python
+
+from Flask import Flask, jsonify
+
+app = Flask(__name__)
+@app.route('api/data', methods=["GET"])
+def get_data():
+    return jsonify({"message": "hello world"})
+if __name__ == '__main__':
+    app.run(debug=True)
