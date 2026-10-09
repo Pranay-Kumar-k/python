@@ -280,3 +280,24 @@ describe('Login Page', () => {
         cy.url().should('include', '/dashboard');
     });
 });
+
+// Using Puppeteer
+// JavaScript can also scrape web content using libraries like Puppeteer, which allows headless browsing.
+
+// JavaScript can also scrape web content using libraries like Puppeteer, which allows headless browsing.
+
+const puppeteer = require('puppeteer');
+
+const puppeteer = require('puppeteer');
+
+(async () => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto('https://example.com');
+
+    // Extract specific data
+    const titles = await page.$$eval('h2', elements => elements.map(el => el.textContent));
+    console.log(titles);
+
+    await browser.close();
+})();

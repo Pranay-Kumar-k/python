@@ -251,3 +251,20 @@ def test_login():
     driver.find_element_by_css_selector("button[type='submit']").click()
     assert "dashboard" in driver.current_url
     driver.quit()
+
+# Web Scraper in Python
+# Python’s libraries, such as BeautifulSoup and Requests, make web scraping straightforward and efficient.
+
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://www.example.com"
+response =requests.get(url)
+
+# Parse the HTML content
+soup = BeautifulSoup(response.content, "html.parser")
+
+# Extract specific data
+titles = soup.find_all("h2")
+for title in titles:
+    print(title.text)
